@@ -1,1 +1,79 @@
-/* Stylesheet for TeaCosy html project by Sarah Wynn, March 2018 */
+/* Stylesheet for Teacozy html project by Sarah Wynn, March 2018 */
+
+body {
+  font-family: Helvetica;
+  font-size: 22px;
+  color: seashell;
+  background-color: black;
+
+  margin-top: 0px; /* Prevents the scrolling main image from appearing above the header. */
+}
+
+header {
+  display: inline-flex;
+  position: fixed;
+  background-color: black;
+  opacity: 0.9;
+  height: 69px;
+  border-bottom: 1px solid seashell;
+
+  align-items: center; /* Center text and image vertically. */
+  width: 100%; /* Specify width so <nav> can move right. */
+  justify-content: space-between; /* Keeps the <nav> items to the right. */
+}
+
+main {
+  padding-top: 69px; /* Allows the image to start below the header. */
+  max-width: 1200px;
+}
+
+#teacozy-logo {
+  height: 50px;
+  padding-left: 10px;
+  /* opacity: 0.9; */
+  background-color: black;
+}
+
+nav span {
+  padding: 20px 10px;
+}
+
+#title-picture {
+  display: flex;
+  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-mission-background.jpg");
+  height: 700px;
+  width: 1200px;
+  /* justify-content: center; */
+}
+
+#content-links {
+  display: inline-flex;
+  width: 1000px;
+}
+
+.content-item {
+  display: inline-flex;
+
+}
+
+#content-links img {
+  height: 200px;
+  width: 300px;
+}
+
+/* #title-picture h2 {
+  background-color: black;
+}
+
+#title-picture h4 {
+  background-color: black;
+} */
+
+#contact {
+  height: 200px;
+}
+
+footer {
+  text-align: left;
+  padding-left: 20px;
+}
