@@ -13,10 +13,8 @@ header {
   display: inline-flex;
   position: fixed;
   background-color: black;
-  opacity: 0.9;
   height: 69px;
   border-bottom: 1px solid seashell;
-
   align-items: center; /* Center text and image vertically. */
   width: 100%; /* Specify width so <nav> can move right. */
   justify-content: space-between; /* Keeps the <nav> items to the right. */
@@ -30,7 +28,7 @@ main {
 #teacozy-logo {
   height: 50px;
   padding-left: 10px;
-  /* opacity: 0.9; */
+  opacity: 0.9; /* Allow the background to color the logo. */
   background-color: black;
 }
 
@@ -47,19 +45,31 @@ nav span {
 }
 
 #content-links {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 1000px;
+  padding: 20px;
 }
 
-.content-item {
-  display: inline-flex;
+#content-links h2 {
+  text-align: center;
+}
 
+#content-links h4 {
+  text-align: center;
 }
 
 #content-links img {
   height: 200px;
   width: 300px;
 }
+
+.content-item {
+  display: inline-block; /* Keep these as blocks so that the labels appear below the relevant picture. */
+  text-align: center; /* Center the labels to the pictures above them. */
+}
+
 
 /* #title-picture h2 {
   background-color: black;
@@ -68,6 +78,12 @@ nav span {
 #title-picture h4 {
   background-color: black;
 } */
+
+#location-links {
+  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-locations-background.jpg");
+  height: 500px;
+  width: auto;
+}
 
 #contact {
   height: 200px;
