@@ -11,7 +11,7 @@ body {
 header {
   display: inline-flex;
   position: fixed;
-  background-color: black;
+  background-color: black; /* Stops the scrolling background from showing through the header. */
   height: 69px;
   border-bottom: 1px solid seashell;
   align-items: center; /* Center text and image vertically. */
@@ -29,36 +29,31 @@ header {
 nav span {
   padding: 20px 10px;
   margin-right: 10px;
-  text-decoration: underline;
+  text-decoration: underline; /* Used if the navigation links are decorated text rather than actual links. */
 }
 
-/* main isn't flex because we want each of its children to start in order on a new line. */
+/* main isn't flex because we want each of its children (Mission, Tea of the Month, Locations, Contact) to start in order on a new line. */
 main {
   display: block;
-  padding-top: 69px; /* Allows the image to start below the header, and to be away from the side of the browser. */
+  padding-top: 69px; /* Allows the image to start below the fixed header. */
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
-h2, h3, h4 {
+/* This padding extends the background-color beyond the content box of the h2 and h4. */
+h2, h4 {
   margin: 0;
   padding: 10px;
 }
 
-h2 {
-  font-weight: bold;
-}
-
-
 #title-picture {
   display: flex; /* This is flex (not an inline-flex) as we want it to span the whole width. */
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-mission-background.jpg");
+  background-color: seashell;
   height: 700px;
   width: 1200px;
-  /* flex-wrap: wrap; *//* Puts the h2 and h4 items on different lines. */
-  /* justify-content: center;*/ /* Brings h2 and h4 items in to the center. */
   align-items: center; /* Brings the Mission statement to the center, vertically. */
 }
 
@@ -66,7 +61,6 @@ h2 {
   width: 1200px;
   height: 100px;
   background-color: black;
-
 }
 
 #tea-of-the-month {
@@ -76,37 +70,34 @@ h2 {
 #content-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 1200px; /* initially 1000px; */
-  padding: 20px;
-}
-
-#content-list h4 {
-  text-align: center;
-  padding: 10px;
-}
-
-#content-list img {
-  height: 200px;
-  width: 300px;
-  margin: 10px;
+  justify-content: center; /* this specifies how the content-items are wrapped. */
+  width: 1200px; /* images span 1000px including 50px between them; this 1200px is for centering purposes. */
+  margin: auto; /* centers the whole content list to the same as the rest of the document. */
 }
 
 .content-item {
   display: inline-block; /* Keep these as blocks so that the labels appear below the relevant picture. */
   text-align: center; /* Center the labels to the pictures above them. */
+}
+
+.content-item img {
+  height: 200px;
+  width: 300px;
+  margin-top: 25px;
+  margin-left: 25px; /* To make up the required width of the tea-of-the-month element. */
+  margin-right: 25px; /* To make up the required width of the tea-of-the-month element. */
+}
+
+.content-item p {
   margin: 10px;
 }
 
-/* .content-item img {
-
-} */
-
+/* Interestingly, the picture is specified as being height:300px;, but the demonstration adds 70px in padding, so more of the picture is visible. */
 #location-section {
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-locations-background.jpg");
+  background-color: seashell;
   height: 500px;
-  padding: ;
-  /* align-items: center; */
+  margin-top: 50px;
 }
 
 #location-list {
@@ -124,10 +115,10 @@ h2 {
 .location-item {
   display: inline-block;
   text-align: center; /* centers the text in the black box. */
-  width: 300px;
-  padding: 10px;
-  margin: 5px 20px;
+  width: 300px; /* required width of location-item background. */
+  margin: 10px 20px; /* Gives the required 10px between location item and Location heading, and the 40px between location items. */
   background-color: black;
+  opacity: 1;
 }
 
 #contact {
