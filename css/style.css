@@ -5,7 +5,6 @@ body {
   font-size: 22px;
   color: seashell;
   background-color: black;
-
   margin-top: 0px; /* Prevents the scrolling main image from appearing above the header. */
 }
 
@@ -17,12 +16,7 @@ header {
   border-bottom: 1px solid seashell;
   align-items: center; /* Center text and image vertically. */
   width: 100%; /* Specify width so <nav> can move right. */
-  justify-content: space-between; /* Keeps the <nav> items to the right. */
-}
-
-main {
-  padding-top: 69px; /* Allows the image to start below the header. */
-  max-width: 1200px;
+  justify-content: space-between; /* Keeps the Tea Cozy image to the left and the <nav> items to the right. */
 }
 
 #teacozy-logo {
@@ -34,62 +28,116 @@ main {
 
 nav span {
   padding: 20px 10px;
+  margin-right: 10px;
+  text-decoration: underline;
 }
 
+/* main isn't flex because we want each of its children to start in order on a new line. */
+main {
+  display: block;
+  padding-top: 69px; /* Allows the image to start below the header, and to be away from the side of the browser. */
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h2, h3, h4 {
+  margin: 0;
+  padding: 10px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+
 #title-picture {
-  display: flex;
+  display: flex; /* This is flex (not an inline-flex) as we want it to span the whole width. */
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-mission-background.jpg");
   height: 700px;
   width: 1200px;
-  /* justify-content: center; */
+  /* flex-wrap: wrap; *//* Puts the h2 and h4 items on different lines. */
+  /* justify-content: center;*/ /* Brings h2 and h4 items in to the center. */
+  align-items: center; /* Brings the Mission statement to the center, vertically. */
 }
 
-#content-links {
+#mission-statement {
+  width: 1200px;
+  height: 100px;
+  background-color: black;
+
+}
+
+#tea-of-the-month {
+  margin-top: 69px;
+}
+
+#content-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 1000px;
+  justify-content: center;
+  width: 1200px; /* initially 1000px; */
   padding: 20px;
 }
 
-#content-links h2 {
+#content-list h4 {
   text-align: center;
+  padding: 10px;
 }
 
-#content-links h4 {
-  text-align: center;
-}
-
-#content-links img {
+#content-list img {
   height: 200px;
   width: 300px;
+  margin: 10px;
 }
 
 .content-item {
   display: inline-block; /* Keep these as blocks so that the labels appear below the relevant picture. */
   text-align: center; /* Center the labels to the pictures above them. */
+  margin: 10px;
 }
 
+/* .content-item img {
 
-/* #title-picture h2 {
-  background-color: black;
-}
-
-#title-picture h4 {
-  background-color: black;
 } */
 
-#location-links {
+#location-section {
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-locations-background.jpg");
   height: 500px;
-  width: auto;
+  padding: ;
+  /* align-items: center; */
+}
+
+#location-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#location-section h2 {
+  display: block;
+  padding-top: 100px;
+}
+
+.location-item {
+  display: inline-block;
+  text-align: center; /* centers the text in the black box. */
+  width: 300px;
+  padding: 10px;
+  margin: 5px 20px;
+  background-color: black;
 }
 
 #contact {
   height: 200px;
+  background-color: black;
 }
 
+/* Copyright text */
 footer {
   text-align: left;
-  padding-left: 20px;
+  padding: 20px;
+  color: seashell;
 }
